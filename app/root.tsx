@@ -11,10 +11,13 @@ import type { MetaFunction } from 'remix'
 
 import styles from './tailwind.css'
 
-export const links: LinksFunction = () => [{ rel: 'stylesheet', href: styles }]
+export const links: LinksFunction = () => [
+  { rel: 'stylesheet', href: styles },
+  { rel: 'icon', href: 'nomo.png' },
+]
 
 export const meta: MetaFunction = () => {
-  return { title: 'New Remix App' }
+  return { title: 'nomo', description: 'Naming your next project with ease.' }
 }
 
 export default function App() {

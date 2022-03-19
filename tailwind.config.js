@@ -1,7 +1,7 @@
 module.exports = {
-  content: ["./app/**/*.{tsx,ts}"],
+  content: ['./app/**/*.{tsx,ts}'],
   theme: {
     extend: {},
   },
-  plugins: [],
+  plugins: [require('m3-tokens/tailwind')({ source: '#00ff00' })],
 }

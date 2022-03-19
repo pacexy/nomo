@@ -1,9 +1,10 @@
 {
-  "name": "remixin",
+  "name": "nomo",
   "private": true,
-  "description": "",
+  "description": "Naming your next project with ease.",
   "license": "",
   "sideEffects": false,
+  "author": "pacexy",
   "scripts": {
     "build": "run-s build:*",
     "build:css": "npm run generate:css -- --minify",
@@ -22,20 +23,27 @@
     "*.{js,ts,tsx}": "eslint --fix"
   },
   "dependencies": {
+    "@github/mini-throttle": "^2.1.0",
     "@remix-run/react": "^1.2.3",
     "@remix-run/vercel": "^1.2.3",
+    "@translate-tools/core": "^0.2.6",
     "clsx": "^1.1.1",
+    "latinize": "^0.5.0",
+    "m3-tokens": "^0.0.3",
+    "npm-name": "6",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-icons": "^4.3.1",
     "react-use": "^17.3.2",
     "remix": "^1.2.3",
-    "remix-utils": "^2.9.0"
+    "remix-utils": "^2.9.0",
+    "ts-extras": "^0.10.1"
   },
   "devDependencies": {
     "@remix-run/dev": "^1.2.3",
     "@remix-run/eslint-config": "^1.2.3",
     "@remix-run/serve": "^1.2.3",
+    "@types/latinize": "^0.2.15",
     "@types/react": "^17.0.24",
     "@types/react-dom": "^17.0.9",
     "cross-env": "^7.0.3",
