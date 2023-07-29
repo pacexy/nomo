@@ -8,6 +8,7 @@ import { LoaderFunction } from 'remix'
 
 const translator = new GoogleTranslator()
 const kuroshiro = new Kuroshiro()
+let initializedKuroshiro = false
 
 export const loader: LoaderFunction = async ({ request }) => {
   const url = new URL(request.url)
@@ -20,11 +21,15 @@ export const loader: LoaderFunction = async ({ request }) => {
     tos.map(async (to) => {
       let result = await translator.translate(text, 'auto', to as langCode)
       if (to === 'ja') {
-        await kuroshiro.init(
-          new KuromojiAnalyzer({
-            dictPath: __dirname + '/../dict',
-          }),
-        )
+        if (!initializedKuroshiro) {
+          await kuroshiro.init(
+            new KuromojiAnalyzer({
+              dictPath: __dirname + '/../dict',
+            }),
+          )
+          initializedKuroshiro = true
+        }
+
         result = await kuroshiro.convert(result, {
           to: 'romaji',
           mode: 'normal',
