@@ -1,5 +1,3 @@
-import path from 'path'
-
 import { GoogleTranslator } from '@translate-tools/core/translators/GoogleTranslator'
 import { langCode } from '@translate-tools/core/types/Translator'
 // @ts-ignore
@@ -24,7 +22,7 @@ export const loader: LoaderFunction = async ({ request }) => {
       if (to === 'ja') {
         await kuroshiro.init(
           new KuromojiAnalyzer({
-            dictPath: path.resolve(__dirname, '../dict'),
+            dictPath: __dirname + '/../dict',
           }),
         )
         result = await kuroshiro.convert(result, {
