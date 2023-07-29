@@ -24,7 +24,7 @@ export const loader: LoaderFunction = async ({ request }) => {
       if (to === 'ja') {
         await kuroshiro.init(
           new KuromojiAnalyzer({
-            dictPath: path.resolve(__dirname, '../public/dict'),
+            dictPath: path.resolve(__dirname, '../dict'),
           }),
         )
         result = await kuroshiro.convert(result, {
