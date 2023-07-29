@@ -13,6 +13,7 @@ export const langs = {
   es: 'Spanish',
   it: 'Italian',
   eo: 'Esperanto',
+  ja: 'Japanese',
 }
 
 export default function Index() {
