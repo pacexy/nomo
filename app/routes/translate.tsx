@@ -1,3 +1,5 @@
+import path from 'path'
+
 import { GoogleTranslator } from '@translate-tools/core/translators/GoogleTranslator'
 import { langCode } from '@translate-tools/core/types/Translator'
 // @ts-ignore
@@ -20,7 +22,11 @@ export const loader: LoaderFunction = async ({ request }) => {
     tos.map(async (to) => {
       let result = await translator.translate(text, 'auto', to as langCode)
       if (to === 'ja') {
-        await kuroshiro.init(new KuromojiAnalyzer())
+        await kuroshiro.init(
+          new KuromojiAnalyzer({
+            dictPath: path.resolve(__dirname, '../public/dict'),
+          }),
+        )
         result = await kuroshiro.convert(result, {
           to: 'romaji',
           mode: 'normal',
