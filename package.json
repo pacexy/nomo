@@ -28,6 +28,8 @@
     "@remix-run/vercel": "^1.2.3",
     "@translate-tools/core": "^0.2.6",
     "clsx": "^1.1.1",
+    "kuroshiro": "^1.2.0",
+    "kuroshiro-analyzer-kuromoji": "^1.1.0",
     "latinize": "^0.5.0",
     "m3-tokens": "^0.0.3",
     "npm-name": "6",
